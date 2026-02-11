@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>随机哥伦比娅" - Random Columbina</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- 主图片展示区域 -->
+        <div class="image-container">
+            <div class="image-wrapper" id="image-wrapper">
+                <div class="loading hidden" id="loading">
+                    <div class="spinner"></div>
+                    <p data-i18n="loading">加载中...</p>
+                </div>
+                <img id="main-image" class="main-image hidden" alt="哥伦比娅">
+            </div>
+        </div>
+
+        <!-- 底部工具栏 -->
+        <div class="toolbar">
+            <button class="tool-btn" id="btn-change" title="换一张">
+                <span class="btn-icon">🔄</span>
+                <span class="btn-text" data-i18n="change">换一张</span>
+            </button>
+            <button class="tool-btn" id="btn-autoplay" title="自动播放">
+                <span class="btn-icon">▶️</span>
+                <span class="btn-text" data-i18n="autoplay">自动播放</span>
+            </button>
+            <button class="tool-btn" id="btn-view" title="查看原图">
+                <span class="btn-icon">🔍</span>
+                <span class="btn-text" data-i18n="view">查看原图</span>
+            </button>
+            <button class="tool-btn" id="btn-upload" title="上传">
+                <span class="btn-icon">⬆️</span>
+                <span class="btn-text" data-i18n="upload">上传</span>
+            </button>
+            <button class="tool-btn" id="btn-music" title="音乐">
+                <span class="btn-icon">🎵</span>
+                <span class="btn-text" data-i18n="music">音乐</span>
+            </button>
+            <button class="tool-btn" id="btn-lang" title="语言">
+                <span class="btn-icon">🌐</span>
+                <span class="btn-text" data-i18n="lang">语言</span>
+            </button>
+        </div>
+
+        <!-- 语言选择菜单 -->
+        <div class="lang-menu" id="lang-menu">
+            <div class="lang-item" data-lang="zh-CN">中文</div>
+            <div class="lang-item" data-lang="ja">日本語</div>
+            <div class="lang-item" data-lang="en">English</div>
+            <div class="lang-item" data-lang="de">Deutsch</div>
+            <div class="lang-item" data-lang="fr">Français</div>
+            <div class="lang-item" data-lang="ko">한국어</div>
+            <div class="lang-item" data-lang="ru">Русский</div>
+            <div class="lang-item" data-lang="la">Latina</div>
+        </div>
+
+        <!-- 上传模态框 -->
+        <div class="modal" id="upload-modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 data-i18n="upload-title">上传图片</h2>
+                    <button class="close-btn" id="close-upload">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="upload-area" id="upload-area">
+                        <div class="upload-icon">⬆️</div>
+                        <p data-i18n="upload-hint">点击或拖拽图片到此处</p>
+                        <input type="file" id="file-input" accept="image/jpeg,image/png,image/gif,image/webp" class="hidden" aria-label="选择要上传的图片文件" title="选择图片文件">
+                    </div>
+                    <div class="upload-info hidden" id="upload-info">
+                        <p id="upload-filename"></p>
+                        <p id="upload-size"></p>
+                    </div>
+                    <div class="upload-progress hidden" id="upload-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="upload-progress-fill"></div>
+                        </div>
+                        <p id="upload-status" data-i18n="uploading">上传中...</p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary" id="btn-submit-upload" data-i18n="submit-upload">提交上传</button>
+                    <button class="btn btn-secondary" id="btn-cancel-upload" data-i18n="cancel">取消</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 版权说明 -->
+        <div class="footer">
+            <p data-i18n="footer-text">这是一个粉丝向的同人图库网站</p>
+            <p data-i18n="copyright">侵权投诉邮箱：<a href="mailto:furina@aether1013.dpdns.org">furina@aether1013.dpdns.org</a></p>
+            <p class="copyright-notice">如果侵权，请联系 <a href="mailto:furina@aether1013.dpdns.org">furina@aether1013.dpdns.org</a> 删除</p>
+        </div>
+    </div>
+
+    <!-- 背景音乐 -->
+    <audio id="bg-music" loop>
+        <source src="/static/music/background.flac" type="audio/flac">
+    </audio>
+
+    <script src="/static/js/main.js"></script>
+</body>
+</html>
