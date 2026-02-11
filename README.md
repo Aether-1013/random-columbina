@@ -49,7 +49,7 @@ curl https://columbina.aether1013.dpdns.org/api/random
 - `data.filename`: 原始文件名
 - `data.url`: 图片访问路径
 
-```
+
 
 **响应字段说明：**
 - `success`: 请求是否成功
